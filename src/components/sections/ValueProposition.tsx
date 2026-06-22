@@ -243,7 +243,7 @@ export function ValueProposition() {
         <div className="relative w-full max-w-[530px] mt-8">
           {/* Gold gradient background */}
           <div
-            className="absolute inset-x-0 top-[60px] bottom-0 rounded-t-[64px]"
+            className="absolute inset-x-0 top-0 md:top-[60px] bottom-0 rounded-t-[48px] md:rounded-t-[64px]"
             style={{
               background:
                 "linear-gradient(180deg, rgba(249,199,1,1) 0%, rgba(254,249,230,1) 72%)",
@@ -252,14 +252,15 @@ export function ValueProposition() {
 
           {/* SECURE Badge */}
           <RevealOnScroll direction="left" delay={0.3}>
-            <div className="absolute top-[400px] -left-8 md:-left-38 z-30 bg-white rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.08)] px-6 py-5 flex items-center gap-4">
-              <div className="w-[56px] h-[56px] bg-[#0BA642] rounded-full flex items-center justify-center shrink-0">
+            <div className="absolute top-[380px] md:top-[400px] -left-2 sm:-left-8 md:-left-38 z-30 bg-white rounded-[16px] md:rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.08)] px-4 md:px-6 py-3 md:py-5 flex items-center gap-3 md:gap-4 scale-[0.85] md:scale-100 origin-left">
+              <div className="w-[44px] md:w-[56px] h-[44px] md:h-[56px] bg-[#0BA642] rounded-full flex items-center justify-center shrink-0">
                 <svg
                   width="22"
                   height="26"
                   viewBox="0 0 24 28"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 md:w-5"
                 >
                   <path
                     d="M12 0L24 5V13C24 20 12 28 12 28C12 28 0 20 0 13V5L12 0Z"
@@ -274,13 +275,13 @@ export function ValueProposition() {
                   />
                 </svg>
               </div>
-              <div className="flex flex-col gap-1.5 min-w-[130px] pt-1">
-                <span className="text-[17px] font-extrabold text-[#111111] tracking-wide">
+              <div className="flex flex-col gap-1.5 min-w-[110px] md:min-w-[130px] pt-1">
+                <span className="text-[15px] md:text-[17px] font-extrabold text-[#111111] tracking-wide">
                   SECURE
                 </span>
                 <div className="flex flex-col gap-1.5 mt-0.5">
-                  <div className="h-2 bg-[#E1E1E1] rounded-full w-[90%]" />
-                  <div className="h-2 bg-[#E1E1E1] rounded-full w-full" />
+                  <div className="h-1.5 md:h-2 bg-[#E1E1E1] rounded-full w-[90%]" />
+                  <div className="h-1.5 md:h-2 bg-[#E1E1E1] rounded-full w-full" />
                 </div>
               </div>
             </div>
@@ -288,14 +289,15 @@ export function ValueProposition() {
 
           {/* FAST Badge */}
           <RevealOnScroll direction="right" delay={0.4}>
-            <div className="absolute top-[180px] -right-32 md:-right-34 z-30 bg-white rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.08)] px-6 py-5 flex items-center gap-4">
-              <div className="w-[56px] h-[56px] bg-[#ED5935] rounded-full flex items-center justify-center shrink-0">
+            <div className="absolute top-[180px] -right-12 sm:-right-24 md:-right-34 z-30 bg-white rounded-[16px] md:rounded-[24px] shadow-[0px_20px_60px_0px_rgba(0,0,0,0.08)] px-4 md:px-6 py-3 md:py-5 flex items-center gap-3 md:gap-4 scale-[0.85] md:scale-100 origin-right">
+              <div className="w-[44px] md:w-[56px] h-[44px] md:h-[56px] bg-[#ED5935] rounded-full flex items-center justify-center shrink-0">
                 <svg
                   width="18"
                   height="26"
                   viewBox="0 0 18 28"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="w-3.5 md:w-[18px]"
                 >
                   <path
                     d="M10.5 0L0 16H8.5L7.5 28L18 12H9.5L10.5 0Z"
@@ -303,13 +305,13 @@ export function ValueProposition() {
                   />
                 </svg>
               </div>
-              <div className="flex flex-col gap-1.5 min-w-[130px] pt-1">
-                <span className="text-[17px] font-extrabold text-[#111111] tracking-wide">
+              <div className="flex flex-col gap-1.5 min-w-[110px] md:min-w-[130px] pt-1">
+                <span className="text-[15px] md:text-[17px] font-extrabold text-[#111111] tracking-wide">
                   FAST
                 </span>
                 <div className="flex flex-col gap-1.5 mt-0.5">
-                  <div className="h-2 bg-[#E1E1E1] rounded-full w-[90%]" />
-                  <div className="h-2 bg-[#E1E1E1] rounded-full w-full" />
+                  <div className="h-1.5 md:h-2 bg-[#E1E1E1] rounded-full w-[90%]" />
+                  <div className="h-1.5 md:h-2 bg-[#E1E1E1] rounded-full w-full" />
                 </div>
               </div>
             </div>
@@ -317,7 +319,7 @@ export function ValueProposition() {
 
           {/* Phone */}
           <RevealOnScroll direction="up" delay={0.1}>
-            <div className="relative z-10 mx-auto w-[310px] sm:w-[350px]">
+            <div className="relative z-10 mx-auto w-[310px] sm:w-[350px] pt-8 md:pt-0">
               <div className="bg-gray-900 rounded-t-[46px] pt-[10px] px-[10px] pb-0">
                 <div className="bg-[#F6EFE6] rounded-t-[40px] overflow-hidden flex flex-col h-[620px]">
                   {/* Status Bar */}
@@ -405,16 +407,6 @@ export function ValueProposition() {
                     ))}
 
                     {showTyping && <TypingIndicator />}
-                  </div>
-
-                  {/* Input Bar */}
-                  <div className="bg-[#F0F2F5] px-2 py-1.5 flex items-center gap-1.5 shrink-0">
-                    <div className="flex-1 bg-white rounded-full px-3 py-1.5 text-[12px] text-gray-400">
-                      Type a message
-                    </div>
-                    <div className="w-8 h-8 bg-[#1CAB5F] rounded-full flex items-center justify-center text-white text-sm">
-                      🎙️
-                    </div>
                   </div>
                 </div>
               </div>

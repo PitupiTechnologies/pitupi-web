@@ -1,13 +1,27 @@
 import { RevealText } from "../animations/RevealText";
 import { RevealOnScroll } from "../animations/RevealOnScroll";
 import { ParallaxLayer } from "../animations/ParallaxLayer";
+import { m, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useSafeMotion } from "../../hooks/useReducedMotion";
 
 export function AmbassadorHero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduce = useSafeMotion();
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
+  
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
   return (
-    <section className="w-full bg-[#3C003D] relative overflow-hidden">
+    <section ref={containerRef} className="w-full bg-[#3C003D] relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] pt-[120px] pb-0 flex flex-col items-center text-center">
         {/* Text Content */}
-        <div className="flex flex-col items-center gap-8 max-w-[800px] z-10">
+        <m.div 
+          className="flex flex-col items-center gap-8 max-w-[800px] z-10"
+          style={{ y: shouldReduce ? 0 : contentY, opacity: shouldReduce ? 1 : contentOpacity }}
+        >
           <div className="flex flex-col gap-4">
             <RevealText
               text="Join Nigeria's Top Crypto Ambassadors"
@@ -27,13 +41,16 @@ export function AmbassadorHero() {
               Apply Now
             </button>
           </RevealOnScroll>
-        </div>
+        </m.div>
 
         {/* Hero Image / Graphic Placeholder */}
         <RevealOnScroll direction="up" delay={0.6} className="w-full my-20 mb-32 max-w-[1200px] relative z-10">
-          <div className="w-full bg-[#1A0B2E]/20 flex items-center justify-center overflow-hidden">
+          <m.div 
+            style={{ y: shouldReduce ? 0 : imageY }}
+            className="w-full bg-[#1A0B2E]/20 flex items-center justify-center overflow-hidden"
+          >
             <img src="/images/ambassadors/hero.png" alt="Ambassadors Hero" className="w-full h-full object-cover object-top" />
-          </div>
+          </m.div>
         </RevealOnScroll>
 
         {/* Background glow effects */}

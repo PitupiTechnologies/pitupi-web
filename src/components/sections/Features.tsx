@@ -108,7 +108,7 @@ export function Features() {
 
           {/* Card 4: Gift Card Exchange — full width, horizontal */}
           <RevealOnScroll direction="up" delay={0.15}>
-          <div className="bg-pitupu-purple-50 rounded-[22px] p-8 flex flex-col lg:flex-row gap-8 md: gap-32 items-stretch min-h-[300px]">
+          <div className="bg-pitupu-purple-50 rounded-[22px] p-8 flex flex-col lg:flex-row gap-8 md:gap-32 items-stretch min-h-[300px]">
             <div className="flex-1 flex flex-col gap-4 justify-center max-w-[296px]">
               <h3 className="text-[28px] font-semibold text-violet-500 tracking-[-0.02em] leading-[1.2]">
                 Automated Gift Card Exchange

@@ -2,6 +2,9 @@ import { MessageCircle } from "lucide-react";
 import { RevealText } from "../animations/RevealText";
 import { RevealOnScroll } from "../animations/RevealOnScroll";
 import { ParallaxLayer } from "../animations/ParallaxLayer";
+import { m, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { useSafeMotion } from "../../hooks/useReducedMotion";
 
 const LEFT_TOKENS = [
   { name: "Tron", size: 90, top: "15%", left: "-2%", img: "/images/hero/252_833.png", speed: 0.1 },
@@ -22,8 +25,15 @@ const RIGHT_TOKENS = [
 ];
 
 export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const shouldReduce = useSafeMotion();
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
+  
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section className="relative w-full bg-pitupu-purple-500 overflow-hidden">
+    <section ref={containerRef} className="relative w-full bg-pitupu-purple-500 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] pt-16 pb-[120px] min-h-[700px] flex flex-col items-center justify-center relative">
 
         {/* Floating Token Circles */}
@@ -68,7 +78,10 @@ export function Hero() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center max-w-[750px] gap-6">
+        <m.div 
+          className="relative z-10 flex flex-col items-center text-center max-w-[750px] gap-6"
+          style={{ y: shouldReduce ? 0 : contentY, opacity: shouldReduce ? 1 : contentOpacity }}
+        >
           <RevealText
             text="No Apps, No Insufficient Storage Wahala"
             as="h1"
@@ -91,7 +104,7 @@ export function Hero() {
               <span>Get Started on WhatsApp</span>
             </a>
           </RevealOnScroll>
-        </div>
+        </m.div>
       </div>
     </section>
   );

@@ -28,7 +28,7 @@ export function AmbassadorBenefits() {
         <RevealText
           text="What do you get as an Ambassador?"
           as="h2"
-          className="text-4xl md:text-[40px] font-bold text-white tracking-[-0.04em] leading-[1.2] text-center mb-16 max-w-[500px]"
+          className="text-4xl md:text-[40px] font-bold text-white tracking-[-0.04em] justify-center leading-[1.2] text-center mb-16 max-w-[500px]"
         />
 
         {/* Content */}

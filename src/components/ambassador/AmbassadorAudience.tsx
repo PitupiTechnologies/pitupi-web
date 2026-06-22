@@ -39,8 +39,8 @@ export function AmbassadorAudience() {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
           {/* Image Placeholder */}
           <RevealOnScroll direction="left" delay={0.1} className="w-full lg:max-w-[791px]">
-            <div className="w-full h-[400px] lg:h-[500px] bg-[#F5F5F5] rounded-[32px] overflow-hidden flex items-center justify-center">
-              <span className="text-gray-400 font-medium">[ Audience Image Placeholder ]</span>
+            <div className="w-full h-[400px] lg:h-[440px] bg-[#F5F5F5] rounded-[32px] overflow-hidden flex items-center justify-center">
+              <img src="/images/ambassadors/whoshouldjoin.png" alt="Who should join" className="w-full h-full object-cover" />
             </div>
           </RevealOnScroll>
 
