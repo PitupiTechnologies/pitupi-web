@@ -31,13 +31,13 @@ export function FAQ() {
 
   return (
     <section id="faq" className="w-full bg-[#F8F5FF]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px] py-[120px] flex flex-col items-center">
-        {/* Header */}
-        <RevealOnScroll direction="up" className="flex flex-col items-center gap-4 mb-12 text-center">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px] py-[120px] flex flex-col lg:flex-row gap-16 items-start">
+        {/* Left column */}
+        <RevealOnScroll direction="left" className="flex flex-col gap-4 lg:w-[400px] shrink-0">
           <RevealText
             text="Frequently Asked Questions"
             as="h2"
-            className="text-4xl md:text-[44px] font-bold text-[#111111] tracking-[-0.04em] leading-[1.1] justify-center"
+            className="text-4xl md:text-[44px] font-bold text-[#111111] tracking-[-0.04em] leading-[1.1]"
           />
           <p className="text-[16px] font-medium text-[#666666] mt-2 leading-[1.5]">
             Answers to common concerns about security and usage
@@ -45,7 +45,11 @@ export function FAQ() {
         </RevealOnScroll>
 
         {/* Accordion */}
-        <RevealOnScroll direction="up" delay={0.2} className="flex flex-col w-full max-w-[800px] gap-4">
+        <RevealOnScroll
+          direction="up"
+          delay={0.2}
+          className="flex flex-col w-full max-w-[800px] gap-4"
+        >
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (

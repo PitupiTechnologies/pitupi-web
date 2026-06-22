@@ -6,19 +6,23 @@ import { RevealOnScroll } from "../animations/RevealOnScroll";
 const FAQS = [
   {
     question: "How do I get paid?",
-    answer: "You will be paid directly to your PituPi wallet in USDT, which you can easily swap and withdraw to your local bank account anytime.",
+    answer:
+      "You will be paid directly to your PituPi wallet in USDT, which you can easily swap and withdraw to your local bank account anytime.",
   },
   {
     question: "Do I need to be a student?",
-    answer: "No, anyone can join! While many of our ambassadors are students, the program is open to all who want to share PituPi and earn.",
+    answer:
+      "No, anyone can join! While many of our ambassadors are students, the program is open to all who want to share PituPi and earn.",
   },
   {
     question: "Do I need to pay to join?",
-    answer: "Absolutely not! The PituPi Ambassador program is 100% free to join.",
+    answer:
+      "Absolutely not! The PituPi Ambassador program is 100% free to join.",
   },
   {
     question: "Can I join while in school or during NYSC?",
-    answer: "Yes! The program is extremely flexible and designed so you can earn passively while focusing on your studies or service.",
+    answer:
+      "Yes! The program is extremely flexible and designed so you can earn passively while focusing on your studies or service.",
   },
 ];
 
@@ -27,21 +31,28 @@ export function AmbassadorFAQ() {
 
   return (
     <section className="w-full bg-[#F8F5FF]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] py-[100px] flex flex-col items-center">
-        {/* Header */}
-        <RevealOnScroll direction="up" className="flex flex-col gap-4 items-center text-center mb-12">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] py-[100px] flex flex-col lg:flex-row gap-16 items-start">
+        {/* Left column */}
+        <RevealOnScroll
+          direction="left"
+          className="flex flex-col gap-4 lg:w-[400px] shrink-0"
+        >
           <RevealText
             text="Frequently Asked Questions"
             as="h2"
-            className="text-4xl md:text-[44px] font-bold text-[#111111] tracking-[-0.04em] leading-[1.1] justify-center"
+            className="text-4xl md:text-[44px] font-bold text-[#111111] tracking-[-0.04em] leading-[1.1] pr-4"
           />
           <p className="text-[16px] font-medium text-[#666666] mt-2 leading-[1.5]">
             Answers to common concerns about security and usage
           </p>
         </RevealOnScroll>
 
-        {/* Accordion */}
-        <RevealOnScroll direction="up" delay={0.2} className="flex flex-col w-full max-w-[800px] gap-4">
+        {/* Right column — accordion */}
+        <RevealOnScroll
+          direction="right"
+          delay={0.2}
+          className="flex flex-col w-full gap-4"
+        >
           {FAQS.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
