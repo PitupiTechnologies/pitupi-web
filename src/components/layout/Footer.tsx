@@ -10,7 +10,11 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4 w-[275px] shrink-0">
             <Link to="/">
-              <img src="/logo.png" alt="PituPi Logo" className="w-[88px] h-[23px]" />
+              <img
+                src="/logo.png"
+                alt="PituPi Logo"
+                className="w-[88px] h-[23px]"
+              />
             </Link>
             <p className="text-lg text-violet-500 leading-[1.45]">
               Accessibility, Effortless

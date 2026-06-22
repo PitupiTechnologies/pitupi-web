@@ -5,7 +5,7 @@ import { RevealOnScroll } from "../animations/RevealOnScroll";
 export function PreFooterCTA() {
   return (
     <section className="w-full bg-[#F8F5FF]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] py-[120px]">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-[120px] py-[120px]">
         <div className="w-full bg-pitupu-purple-500 rounded-3xl px-8 md:px-12 py-16 flex flex-col items-center text-center gap-8 relative overflow-hidden border border-[rgba(245,158,11,0.2)]">
           {/* Decorative blurs */}
           <div className="absolute -top-32 -left-32 w-80 h-80 bg-pitupu-purple-700/40 rounded-full blur-[80px] pointer-events-none" />
@@ -31,7 +31,8 @@ export function PreFooterCTA() {
             className="relative z-10 bg-pitupi-gold-500 text-[#111111] font-semibold text-lg h-[60px] px-8 rounded-[16px] flex items-center gap-3 hover:brightness-105 transition-all shadow-lg"
           >
             <MessageCircle size={20} />
-            <span>Start Chatting on WhatsApp</span>
+            <span className="hidden md:block">Start Chatting on WhatsApp</span>
+            <span className="block md:hidden">Start Chatting</span>
           </a>
           </RevealOnScroll>
         </div>

@@ -4,21 +4,24 @@ import { RevealOnScroll } from "../animations/RevealOnScroll";
 const STEPS = [
   {
     icon: "/images/how-it-works/say-hi-icon.svg",
-    cardBg: "bg-[#FBCFC2] bg-opacity-20 backdrop-blur-sm border border-white/50",
+    cardBg:
+      "bg-[#FBCFC2] bg-opacity-20 backdrop-blur-sm border border-white/50",
     title: "Say Hi.",
     description:
       "Message our official number to instantly create your multi-chain wallet. No seed phrases to write down.",
   },
   {
     icon: "/images/how-it-works/secure-icon.svg",
-    cardBg: "bg-[#E6E6F1] bg-opacity-20 backdrop-blur-sm border border-white/50",
+    cardBg:
+      "bg-[#E6E6F1] bg-opacity-20 backdrop-blur-sm border border-white/50",
     title: "Secure Your Bag.",
     description:
       "Set a private 4 - digit PIN via our secure in-app popup. Your keys, your control.",
   },
   {
     icon: "/images/how-it-works/transact-icon.svg",
-    cardBg: "bg-[#FDEEB0] bg-opacity-20 backdrop-blur-sm border border-white/50",
+    cardBg:
+      "bg-[#FDEEB0] bg-opacity-20 backdrop-blur-sm border border-white/50",
     title: "Transact in Seconds.",
     description: null, // custom render below
   },
@@ -40,17 +43,23 @@ export function HowItWorks() {
         <div className="flex flex-col md:grid md:grid-cols-3 gap-32 md:gap-8 px-6 lg:px-[120px] pb-8 w-full relative">
           {STEPS.map((step, i) => {
             return (
-              <RevealOnScroll 
-                key={i} 
-                direction="up" 
-                delay={i * 0.1} 
+              <RevealOnScroll
+                key={i}
+                direction="up"
+                delay={i * 0.1}
                 className="sticky md:static w-full shadow-lg md:shadow-none rounded-3xl"
                 style={{ top: `calc(160px + ${i * 24}px)` }}
               >
-                <div className={`${step.cardBg} rounded-3xl p-8 flex flex-col gap-10 min-h-[340px] transition-transform duration-300 w-full`}>
+                <div
+                  className={`${step.cardBg} rounded-3xl p-8 flex flex-col gap-10 min-h-[340px] transition-transform duration-300 w-full`}
+                >
                   {/* Icon */}
                   <div className="w-16 h-16 flex items-start justify-start shrink-0">
-                    <img src={step.icon} alt={step.title} className="w-full h-full object-contain" />
+                    <img
+                      src={step.icon}
+                      alt={step.title}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   {/* Text */}

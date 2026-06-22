@@ -2,13 +2,13 @@ import { useEffect, useRef } from "react";
 import Matter from "matter-js";
 
 const NETWORKS = [
-  { label: "MTN",     bg: "#F9C701", color: "#231823" },
-  { label: "AIRTEL",  bg: "#FB2C36", color: "#ffffff" },
-  { label: "MTN",     bg: "#F9C701", color: "#231823" },
+  { label: "MTN", bg: "#F9C701", color: "#231823" },
+  { label: "AIRTEL", bg: "#FB2C36", color: "#ffffff" },
+  { label: "MTN", bg: "#F9C701", color: "#231823" },
   { label: "9MOBILE", bg: "#231823", color: "#ffffff" },
-  { label: "AIRTEL",  bg: "#FB2C36", color: "#ffffff" },
-  { label: "GLO",     bg: "#0E9D42", color: "#ffffff" },
-  { label: "GLO",     bg: "#0E9D42", color: "#ffffff" },
+  { label: "AIRTEL", bg: "#FB2C36", color: "#ffffff" },
+  { label: "GLO", bg: "#0E9D42", color: "#ffffff" },
+  { label: "GLO", bg: "#0E9D42", color: "#ffffff" },
   { label: "9MOBILE", bg: "#231823", color: "#ffffff" },
 ];
 
@@ -130,7 +130,7 @@ export function InstantTopupsPhysics() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     observer.observe(container);
@@ -144,7 +144,7 @@ export function InstantTopupsPhysics() {
   }, []);
 
   return (
-    <div className="bg-pitupu-purple-50 rounded-[32px] p-8 flex flex-col gap-8">
+    <div className="bg-pitupu-purple-50 rounded-[32px] p-4 md:px-8 py-8 flex flex-col gap-8">
       <div className="flex flex-col gap-4">
         <h3 className="text-[28px] font-semibold text-violet-500 tracking-[-0.02em] leading-[1.2]">
           Instant Top-ups
@@ -163,7 +163,13 @@ export function InstantTopupsPhysics() {
         <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2 bg-[#E9F7EF] border border-[#27AE60] px-5 py-2.5 rounded-full pointer-events-none">
           <div className="w-5 h-5 bg-[#0A5C2F] rounded-full flex items-center justify-center shrink-0">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M10 3.5L4.5 9L2 6.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M10 3.5L4.5 9L2 6.5"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
           <span className="text-[#0A5C2F] font-semibold text-[14px] text-nowrap">

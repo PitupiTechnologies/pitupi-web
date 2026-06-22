@@ -7,10 +7,12 @@ import { PreFooterCTA } from '../components/sections/PreFooterCTA';
 
 export function Home() {
   return (
-    <main>
+    <main className="bg-white">
       <Hero />
-      <ValueProposition />
-      <HowItWorks />
+      <div className="relative w-full z-0">
+        <ValueProposition />
+        <HowItWorks />
+      </div>
       <Features />
       <FAQ />
       <PreFooterCTA />

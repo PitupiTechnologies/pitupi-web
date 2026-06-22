@@ -31,7 +31,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="w-full bg-[#F8F5FF]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px] py-[120px] flex flex-col lg:flex-row gap-16 items-start">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px] py-[60px] flex flex-col lg:flex-row gap-16 items-start">
         {/* Left column */}
         <RevealOnScroll direction="left" className="flex flex-col gap-4 lg:w-[400px] shrink-0">
           <RevealText

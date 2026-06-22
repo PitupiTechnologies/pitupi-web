@@ -7,10 +7,12 @@ import {
   Signal,
   Battery,
 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { RevealText } from "../animations/RevealText";
 import { RevealOnScroll } from "../animations/RevealOnScroll";
 
 /* ─── Chat data ─── */
+import React from "react";
 interface Message {
   id: number;
   type: "out" | "in";
@@ -148,6 +150,14 @@ export function ValueProposition() {
   const sectionRef = useRef<HTMLElement>(null);
   const hasStarted = useRef(false);
 
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.3]);
+
   // Start the animation when the section scrolls into view
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -179,16 +189,13 @@ export function ValueProposition() {
       if (isIncoming) {
         // Show typing indicator, then message
         setShowTyping(true);
-        setTimeout(
-          () => {
-            setShowTyping(false);
-            currentIndex++;
-            setVisibleCount(currentIndex);
-            scrollToBottom();
-            setTimeout(showNext, 400);
-          },
-          700,
-        );
+        setTimeout(() => {
+          setShowTyping(false);
+          currentIndex++;
+          setVisibleCount(currentIndex);
+          scrollToBottom();
+          setTimeout(showNext, 400);
+        }, 700);
       } else {
         // Outgoing messages appear after a short delay
         setTimeout(
@@ -219,8 +226,11 @@ export function ValueProposition() {
   }
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#F8F5FF]">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-[200px] pt-[120px] pb-0 flex flex-col items-center overflow-hidden">
+    <section ref={sectionRef} className="w-full bg-[#F8F5FF] sticky top-0 h-[130dvh] md:h-[100dvh] z-0 overflow-hidden">
+      <motion.div 
+        style={{ scale, opacity }} 
+        className="w-full h-[100dvh] max-w-[1440px] mx-auto px-6 lg:px-[200px] pt-[80px] md:pt-[120px] flex flex-col items-center justify-between transform-gpu"
+      >
         {/* Header */}
         <RevealOnScroll direction="up">
           <div className="flex flex-col items-center text-center gap-4 mb-8 max-w-[700px]">
@@ -413,7 +423,8 @@ export function ValueProposition() {
             </div>
           </RevealOnScroll>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
+

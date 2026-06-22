@@ -11,7 +11,8 @@ const rewards = [
   {
     icon: <TrendingUp size={20} className="text-white" strokeWidth={2.5} />,
     title: "Recurring Commission",
-    description: "Earn a percent as tokens on every transaction your referral makes for the first 3 months",
+    description:
+      "Earn a percent as tokens on every transaction your referral makes for the first 3 months",
   },
   {
     icon: <Gift size={20} className="text-white" strokeWidth={2.5} />,
@@ -25,7 +26,10 @@ export function AmbassadorRewards() {
     <section className="w-full bg-white">
       <div className="max-w-[1440px] mx-auto px-6 lg:px-[120px] py-[120px] flex flex-col items-center">
         {/* Header */}
-        <RevealOnScroll direction="up" className="flex flex-col items-center text-center gap-3 mb-16">
+        <RevealOnScroll
+          direction="up"
+          className="flex flex-col items-center text-center gap-3 mb-16"
+        >
           <RevealText
             text="What's in it for you"
             as="h2"
@@ -37,11 +41,16 @@ export function AmbassadorRewards() {
         </RevealOnScroll>
 
         {/* Content Layout */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 w-full items-center">
           {/* Left Column - List */}
-          <div className="flex flex-col gap-10 w-full lg:max-w-[383px] shrink-0">
+          <div className="flex flex-col gap-10">
             {rewards.map((reward, i) => (
-              <RevealOnScroll key={i} direction="left" delay={i * 0.1} className="flex gap-6 items-start">
+              <RevealOnScroll
+                key={i}
+                direction="left"
+                delay={i * 0.1}
+                className="flex gap-6 items-start"
+              >
                 <div className="w-12 h-12 rounded-full bg-[#8F0091] flex items-center justify-center shrink-0 shadow-sm">
                   {reward.icon}
                 </div>
@@ -58,11 +67,11 @@ export function AmbassadorRewards() {
           </div>
 
           {/* Right Column - Image */}
-          <RevealOnScroll direction="right" delay={0.2} className="w-full lg:max-w-[791px]">
-            <div className="w-full h-[400px] lg:h-[440px] rounded-[32px] overflow-hidden relative shadow-lg">
-              <img 
-                src="/images/ambassadors/whatsinIt.png" 
-                alt="Ambassador Rewards" 
+          <RevealOnScroll direction="right" delay={0.2} className="w-full">
+            <div className="w-full aspect-[4/3] rounded-[32px] overflow-hidden relative shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Ambassador Rewards"
                 className="w-full h-full object-cover"
               />
             </div>
