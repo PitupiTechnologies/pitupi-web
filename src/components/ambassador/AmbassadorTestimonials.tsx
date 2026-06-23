@@ -1,4 +1,3 @@
-import { RevealText } from "../animations/RevealText";
 import { RevealOnScroll } from "../animations/RevealOnScroll";
 
 const testimonials = [

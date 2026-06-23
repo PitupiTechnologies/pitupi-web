@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import {
   ArrowLeft,
-  CheckCircle2,
   MoreVertical,
   Phone,
   Signal,
