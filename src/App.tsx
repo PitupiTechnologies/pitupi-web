@@ -3,6 +3,7 @@ import { LazyMotion } from 'framer-motion';
 import { ReactLenis } from 'lenis/react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { Ambassador } from './pages/Ambassador';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
@@ -15,6 +16,7 @@ function App() {
     <ReactLenis root>
       <LazyMotion features={loadFeatures} strict>
         <Router>
+          <ScrollToTop />
           <div className="min-h-screen bg-white font-sans text-gray-900 flex flex-col">
             <Navbar />
             <div className="flex-1">
